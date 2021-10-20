@@ -391,6 +391,10 @@ Sidebar
 .sidebar-close:hover {
   color: red;
 }
+.cart-close:hover {
+  color: red;
+}
+
 .sidebar-link {
   font-size: 1.5rem;
   text-transform: capitalize;

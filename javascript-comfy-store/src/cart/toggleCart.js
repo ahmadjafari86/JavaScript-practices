@@ -1,3 +1,15 @@
-import { getElement } from '../utils.js';
+import { getElement } from '../utils.js'
 
-export const openCart = () => {};
+const toggleCartBtn = getElement('.toggle-cart')
+const cartOverlay = getElement('.cart-overlay')
+const CloseCartBtn = getElement('.cart-close')
+
+toggleCartBtn.addEventListener('click', () => {
+  cartOverlay.classList.add('show')
+})
+
+CloseCartBtn.addEventListener('click', () => {
+  cartOverlay.classList.remove('show')
+})
+
+export const openCart = () => {cartOverlay.classList.add('show')};
