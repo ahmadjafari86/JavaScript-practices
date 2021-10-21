@@ -15,7 +15,7 @@ const display = (products,element) => {
       <!-- footer -->
       <footer>
         <p class="product-name">${name}</p>
-        <h4 class="product-price">$3.21</h4>
+        <h4 class="product-price">${formatPrice(price)}</h4>
       </footer>
     </article>`
     }).join('');
