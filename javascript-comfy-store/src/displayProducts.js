@@ -19,6 +19,18 @@ const display = (products,element) => {
       </footer>
     </article>`
     }).join('');
+    element.addEventListener('click', e =>{
+       const target = e.target;
+       if (target.classList.contains('product-cart-btn')){
+           addToCart(target.dataset.id);
+       } else {
+           const parent = e.target.parentElement;
+           if (parent.classList.contains('product-cart-btn')){
+               addToCart(parent.dataset.id)
+           }
+       }
+
+    });
 };
 
 export default display;
