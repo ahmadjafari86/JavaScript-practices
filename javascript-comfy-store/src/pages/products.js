@@ -14,6 +14,7 @@ import display from '../displayProducts.js';
 import { getElement } from '../utils.js';
 
 setupSearch(store);
+setupCompanies(store);
 const loading = getElement('.page-loading')
 display(store,getElement('.products-container'));
 loading.style.display = 'none';
