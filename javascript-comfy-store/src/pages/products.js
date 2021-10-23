@@ -13,6 +13,7 @@ import { store } from '../store.js';
 import display from '../displayProducts.js';
 import { getElement } from '../utils.js';
 
+setupPrice(store);
 setupSearch(store);
 setupCompanies(store);
 const loading = getElement('.page-loading')
