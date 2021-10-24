@@ -1,4 +1,5 @@
-import { getStorageItem, setStorageItem } from './utils.js';
+import {getStorageItem, setStorageItem} from './utils.js';
+
 let store = getStorageItem('ikeaStore');
 const setupStore = (products) => {
     store = products.map((product)=>{
@@ -8,5 +9,7 @@ const setupStore = (products) => {
     });
     setStorageItem('ikeaStore',store)
 };
-const findProduct = () => {};
+const findProduct = (id) => {
+    return store.find(product => product.id === id);
+};
 export { store, setupStore, findProduct };
