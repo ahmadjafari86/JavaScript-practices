@@ -60,8 +60,28 @@ function displayCartItemsDOM() {
   });
 }
 
-function setupCartFunctionality() {
+function removeItem(id) {
+  cart = cart.filter(cartItem => cartItem.id !== id);
+}
 
+function setupCartFunctionality() {
+   cartItemsDOM.addEventListener('click',function (e){
+     const element = e.target;
+     const parent = e.target.parentElement;
+     const id = e.target.dataset.id;
+     const parentId = e.target.parentElement.dataset.id;
+     // remove
+     if (element.classList.contains('cart-item-remove-btn')){
+       removeItem(id);
+       parent.parentElement.remove();
+     }
+     // increase
+     // decrease
+
+     displayCartItemCount();
+     displayCartTotal();
+     setStorageItem('cart',cart);
+   });
 }
 const init = ()=> {
   displayCartItemCount();
