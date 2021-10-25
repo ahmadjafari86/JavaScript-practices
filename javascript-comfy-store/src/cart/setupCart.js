@@ -35,16 +35,26 @@ export const addToCart = (id) => {
   }else {
 
   }
-
   displayCartItemCount();
   displayCartTotal();
   setStorageItem('cart',cart);
-
-
   openCart();
 };
 
+function displayCartItemsDOM() {
+  cart.forEach((cartItem)=>{
+    addToCartDOM(cartItem);
+  });
+}
+
+function setupCartFunctionality() {
+
+}
+
 const init = ()=> {
-  console.log(cart);
+  displayCartItemCount();
+  displayCartTotal();
+  displayCartItemsDOM();
+  setupCartFunctionality();
 };
 init();
